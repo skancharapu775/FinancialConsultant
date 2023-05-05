@@ -21,6 +21,18 @@ function App() {
     if (input != '') {  
       console.log('Input: ', input);
       updateAnswer("Loading answer...");
+
+    //silly post request, untested as of 5/5/23
+    axios.post('FLASK_URL_POST', input)
+      .then(res => {
+          axios.get('FLASK_URL_RECIEVE')
+        .then(res => {
+          updateAnswer(res.data)
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
     }
   }
 
