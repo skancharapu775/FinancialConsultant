@@ -80,6 +80,7 @@
   color: #000;
   font-family: "Roboto", sans-serif;
   min-height: 115px;
+  min-width: 30vw;
   line-height: 1.5em;
   letter-spacing: 0.1px;
   padding: 10px 30px;

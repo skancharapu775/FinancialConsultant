@@ -9,7 +9,9 @@ function App() {
   const [input, updateInput] = useState();
 
   //store flask answer
-  const [answer, updateAnswer] = useState();
+  const [answer, updateAnswer] = useState("Hello, I am GenieConsultant, ask any question regarding investing or finances");
+  
+
 
   const sendInput = async (event) => {
     if (event.key != "Enter") {
@@ -18,6 +20,7 @@ function App() {
     //send the input to the flask backend
     if (input != '') {  
       console.log('Input: ', input);
+      updateAnswer("Loading answer...");
     }
   }
 
@@ -34,7 +37,7 @@ function App() {
               onKeyDown={(e) => sendInput(e)}
           />
           <div className="chat-answer">
-            <b>GenieConsultant:</b> answer answer answer answer answer answer
+            {answer}
           </div>
         </div>
       </header>
