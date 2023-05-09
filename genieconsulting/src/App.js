@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
+import Header from './components/Header.js'
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <header className="App-header">
         <div className="chat-area">
             <input

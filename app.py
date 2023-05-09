@@ -22,11 +22,11 @@ def consultant ():
     test_response = "Hello, I am GenieConsultant"
 
     if request.method == "POST":
-        print(request.json)
+        print(request.json['input'])
         return (test_response)
       
     if request.method == "GET":
-        return("Hello I am GenieConsultant")
+        return(test_response)
 
 
 @app.route('/pdf', methods=['GET'])
