@@ -2,35 +2,31 @@
 from flask import Flask, request, send_file
 from flask_cors import CORS
 import json
-from consultant import *
+#from consultant import *
 
 app = Flask(__name__)
 CORS(app)
-api = Api(app)
-
-@app.after_request
-def after_request(response):
-  response.headers.add('Access-Control-Allow-Origin', '*')
-  response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-  response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
-  return response
+#api = Api(app)
 
 
-# flask function that SENDS data to the client
-@app.route('/members')
-def members ():
-    return {"members": ["Member1", "Member2", "Member3"]}
+# # flask function that SENDS data to the client
+# @app.route('/members')
+# def members ():
+#     return {"members": ["Member1", "Member2", "Member3"]}
 
 
 # chat requests
 @app.route('/consultant', methods=['GET', 'POST'])
 def consultant ():
 
+    test_response = "Hello, I am GenieConsultant"
+
     if request.method == "POST":
-        return ('', 204)
+        print(request.json)
+        return (test_response)
       
     if request.method == "GET":
-        return
+        return("Hello I am GenieConsultant")
 
 
 @app.route('/pdf', methods=['GET'])
