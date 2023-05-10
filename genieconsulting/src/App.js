@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import axios from 'axios';
 import Header from './components/Header.js'
+import { Button } from '@mui/material';
 
 
 function App() {
@@ -59,6 +60,9 @@ function App() {
             {answer}
           </div>
         </div>
+        <a className="url-button" href="http://localhost:5000/pdf" target="_blank" download="Financial_Plan.pdf">
+            <Button variant="contained">Download PDF</Button>
+        </a>
       </header>
     </div>
   );
