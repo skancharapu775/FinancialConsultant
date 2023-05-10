@@ -10,13 +10,15 @@ def generate_pdf(text):
     
     new_line = "<br>"
     html_string = """<h1 style="text-align:center"><b>""" + title + "</b></h1>"
-    html_string += new_line * 2
+    html_string += new_line * 3
+    
+    lines = text.split("\n")
 
-    for i in range(len(answers)):
-        line = """<h3 style="text-align:center">""" + str(i+1) + ": " + problems[i]["answer"] + "</h3>"
-        html_string += line
+    for i in range(len(lines)):
+        html_string = """<h3 style="text-align:left"><b>""" + lines[i] + "</b></h3>"
+        html_string += new_line
 
-    pdfname = "Practice_Worksheet.pdf"
+    pdfname = "Financial_Plan.pdf"
     pdfkit.from_string(html_string, output_path = pdfname)
 
     return pdfname

@@ -11,9 +11,7 @@ MAX_TOKENS = 400
 TEMPERATURE = 1
 MODEL = "gpt-3.5-turbo"
 
-
 openai.api_key = keys.API_KEY
-user_prompt = "Hello there"
 
 def generate_fresponse(prompt):
     response = openai.ChatCompletion.create(

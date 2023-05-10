@@ -40,6 +40,5 @@ def pdf():
             # Generate plan for finances (Generate pdf report)
             return send_file('Financial_Plan.pdf')
     
-    
 if __name__ == '__main__':
     app.run(debug=True)
