@@ -2,7 +2,8 @@
 from flask import Flask, request, send_file
 from flask_cors import CORS
 import json
-#from consultant import *
+from consultant import generate_fresponse
+from report import generate_pdf
 
 app = Flask(__name__)
 CORS(app)
@@ -18,15 +19,17 @@ CORS(app)
 # chat requests
 @app.route('/consultant', methods=['GET', 'POST'])
 def consultant ():
-
-    test_response = "Hello, I am GenieConsultant"
-
     if request.method == "POST":
-        print(request.json['input'])
-        return (test_response)
+        input = request.json['input']
+        print(input)
+
+        response = generate_fresponse(input)
+        generate_pdf(response)
+
+        return (response)
       
     if request.method == "GET":
-        return(test_response)
+        return(response)
 
 
 @app.route('/pdf', methods=['GET'])

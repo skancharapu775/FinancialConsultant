@@ -7,13 +7,13 @@ Financial Consultant
 - Create outlets using specific prompts
 '''
 
-MAX_TOKENS = 100
+MAX_TOKENS = 400
 TEMPERATURE = 1
 MODEL = "gpt-3.5-turbo"
 
 
 openai.api_key = keys.API_KEY
-user_prompt = "An anonymous individual has several gigabytes of pirates movies on his computer. What are you going to do you buffoon?"
+user_prompt = "Hello there"
 
 def generate_fresponse(prompt):
     response = openai.ChatCompletion.create(
@@ -26,4 +26,4 @@ def generate_fresponse(prompt):
     f_response = response["choices"][0]["message"]["content"]
     return f_response
 
-print(generate_fresponse(user_prompt))
+# print(generate_fresponse(user_prompt))
