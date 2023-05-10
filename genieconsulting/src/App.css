@@ -14,8 +14,9 @@
 }
 
 .App-header {
+  padding-top: 20px;
   background-color: #282c34;
-  min-height: 89vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,7 +58,6 @@
 .chat-area {
   border-radius: 12px;
   border: 1px solid #dfe1e5;
-  margin: auto;
   max-width: 600px;
   background-color: #fff;
 }
@@ -92,6 +92,10 @@
 
 .header {
   font-family: "Roboto", sans-serif
+}
+
+.url-button {
+  padding: 60px 30px;
 }
 
 @keyframes cursor-blink {
