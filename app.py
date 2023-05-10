@@ -7,7 +7,9 @@ from report import generate_pdf
 
 app = Flask(__name__)
 CORS(app)
+
 #api = Api(app)
+response = ""
 
 
 # # flask function that SENDS data to the client
@@ -19,6 +21,8 @@ CORS(app)
 # chat requests
 @app.route('/consultant', methods=['GET', 'POST'])
 def consultant ():
+    global response
+
     if request.method == "POST":
         input = request.json['input']
         print(input)

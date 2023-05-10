@@ -1,3 +1,12 @@
+import pdfkit
+
+
+#for windows only, remove when on mac
+# Set the path to wkhtmltopdf executable file
+path_wkhtmltopdf = 'C:\Program Files\wkhtmltopdin/wkhtmltopdf.exe'  # This may vary depending on your system
+config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
+ 
+# Use the configuration when generating PDF
 def generate_pdf(text):
     '''
     sudo apt-get update
@@ -19,6 +28,8 @@ def generate_pdf(text):
         html_string += new_line
 
     pdfname = "Financial_Plan.pdf"
-    pdfkit.from_string(html_string, output_path = pdfname)
+
+    #remove configuration argument when not on windows
+    pdfkit.from_string(html_string, output_path = pdfname, configuration=config)
 
     return pdfname
