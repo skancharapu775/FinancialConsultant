@@ -24,12 +24,17 @@ def consultant ():
     global response
 
     if request.method == "POST":
+        # Get user response from json
         input = request.json['input']
         print(input)
 
+        # Generate model response
         response = generate_fresponse(input)
+       
+        # Create PDF on disk
         generate_pdf(response)
 
+        # Return text response to frontend for display
         return (response)
       
     if request.method == "GET":
@@ -41,7 +46,8 @@ def pdf():
 
     if request.method == 'GET':
         with open('Financial_Plan.pdf', 'rb') as static_file:
-            # Generate plan for finances (Generate pdf report)
+            
+            # Show user pdf version of GPT response
             return send_file('Financial_Plan.pdf')
     
 if __name__ == '__main__':

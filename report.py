@@ -14,22 +14,25 @@ def generate_pdf(text):
     pip install pdfkit
     brew install wkhtmltopdf
     '''
+    # Convert string to tile object
     str_title = "Financial Plan"
     title = str_title.title()
     
+    # Add title
     new_line = "<br>"
     html_string = """<h1 style="text-align:center"><b>""" + title + "</b></h1>"
     html_string += new_line * 3
     
     lines = text.split("\n")
 
+    # Add gpt output line by line
     for i in range(len(lines)):
         html_string = """<h3 style="text-align:left"><b>""" + lines[i] + "</b></h3>"
         html_string += new_line
 
     pdfname = "Financial_Plan.pdf"
 
-    #remove configuration argument when not on windows
+    # Remove configuration argument when not on windows
     pdfkit.from_string(html_string, output_path = pdfname, configuration=config)
 
     return pdfname
