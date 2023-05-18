@@ -7,10 +7,11 @@ SETUP
 2. Install Firefox
 3. Install the Allow C0RS extension in Firefox and toggle it on
 4. Create two terminals, each in the FinancialConultant directory
-5. In one terminal, start the backend server by running "python3 app.py"
-6. In the other terminal, #2, go to the genieconsulting directory by running "cd genieconsulting"
-7. In terminal #2, run the command "npm start"
-8. In Firefox, open your local host
+5. Find "Financial Consultant keys" email and create the keys.api file in one of the terminals
+6. In one terminal, start the backend server by running "python3 app.py"
+7. In the other terminal, #2, go to the genieconsulting directory by running "cd genieconsulting"
+8. In terminal #2, run the command "npm start"
+9. In Firefox, open your local host
 
 
 FEATURES
