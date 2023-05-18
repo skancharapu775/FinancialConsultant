@@ -13,7 +13,7 @@ function App() {
   })
 
   //store flask answer
-  const [answer, updateAnswer] = useState("Hello, I am GenieConsultant, ask any question regarding investing or finances");
+  const [answer, updateAnswer] = useState("Hello, I am the GenieConsultant, ask any question regarding investing or finances");
   
 
 
