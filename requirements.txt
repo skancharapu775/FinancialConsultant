@@ -3,3 +3,5 @@ wkhtmltopdf
 openai
 flask
 flask-cors
+npm
+urllib
