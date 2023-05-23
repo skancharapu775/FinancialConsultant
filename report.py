@@ -21,7 +21,7 @@ def generate_pdf(text):
 
     # Add title
     new_line = "<br>"
-    html_string = """<h1 style="text-align:center">""" + title + "</h1>"
+    html_string += """<h1 style="text-align:center">""" + title + "</h1>"
     html_string += new_line * 3
 
     lines = text.split("\n")
